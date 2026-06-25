@@ -6,8 +6,6 @@
 
 ## 1. Problema Central
 
-A Clear IT perdeu o controle sobre o tempo que leva para resolver incidentes porque o conhecimento técnico necessário para diagnosticá-los está **disperso, não estruturado e inacessível** no momento da crise.
-
 O que parece um problema de ferramentas é, na verdade, um problema de **gestão de conhecimento operacional em tempo real**: cada analista L1 começa do zero, toda vez, mesmo quando a solução já existe em algum ticket fechado ou na cabeça de um sênior.
 
 ### Quem sofre?
