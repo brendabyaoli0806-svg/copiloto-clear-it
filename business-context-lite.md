@@ -78,9 +78,7 @@ Ao resolver as 3 dores, a Clear IT ganha **blindagem financeira e operacional**:
 
 ## 7. User Story
 
-> Como **analista de suporte L1 da Clear IT**,
-> quero receber, ao abrir um ticket no FreshService, uma **sugestão estruturada de diagnóstico** com a causa raiz mais provável, as ações recomendadas e um rascunho de resposta ao cliente,
-> para que eu possa **resolver incidentes com autonomia** — sem precisar consultar múltiplas fontes manualmente ou interromper um analista sênior — **reduzindo o tempo de atendimento e aumentando minha taxa de resolução no primeiro contato**.
+> Como analista de suporte L1 da Clear IT, quero receber uma sugestão estruturada de diagnóstico com a causa raiz mais provável, as ações recomendadas e um rascunho de resposta ao cliente, para que eu possa resolver incidentes com autonomia — sem precisar consultar múltiplas fontes manualmente ou interromper um analista sênior — reduzindo o tempo de atendimento e aumentando minha taxa de resolução no primeiro contato.
 
 ---
 
