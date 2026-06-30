@@ -103,9 +103,15 @@ Ao resolver as 3 dores, a Clear IT ganha **blindagem financeira e operacional**:
 | 4 | **Sem dado sensível exposto** | Nenhum log com IP de cliente, credencial ou dado pessoal é enviado ao LLM sem mascaramento prévio. Auditoria de segurança confirma conformidade LGPD antes do deploy. |
 | 5 | **MTTR mensurável após 30 dias** | Dashboard do FreshService mostra redução estatisticamente relevante no MTTR do grupo com Copiloto vs. grupo controle — delta mínimo de 15% para validar rollout. |
 
----
+## 10. Validação de Escopo — MVP
 
-## 10. Squad
+- **Escopo aprovado em:** 2026-06-30
+- **Aprovado por:** Kazuo (Consultor/Mentor)[cite: 1]
+- **Status do Escopo:** Aprovado com ajustes (Integração com FreshService removida para simplificar o MVP e focar no núcleo do diagnóstico técnico)[cite: 1].
+- **Itens dentro do escopo:** nota interna automática, diagnóstico com confiança, rascunho de resposta, registro de feedback, anonimização LGPD[cite: 1].
+- **Itens fora do escopo (MVP):** execução autônoma de comandos, substituição do analista humano, treinamento do modelo com dados da Clear IT[cite: 1].
+
+## 11. Squad
 
 | Membro | Área |
 |---|---|
