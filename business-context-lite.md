@@ -105,9 +105,9 @@ Ao resolver as 3 dores, a Clear IT ganha **blindagem financeira e operacional**:
 
 ## 10. Validação de Escopo — MVP
 
-- **Status do Escopo:** ⚠️ Aguardando validação formal de Kazuo (Consultor/Mentor).
+- **Status do Escopo:** ⚠️ Aguardando validação formal de (Consultor/Mentor).
 - **Ajuste realizado:** Alinhado com o direcionamento recebido via WhatsApp para simplificar o MVP, removendo a necessidade de integração com o FreshService para focar no núcleo do diagnóstico técnico.
-- **Próximo passo:** Apresentar o escopo revisado ao Kazuo para assinatura/aprovação formal da entrega do Sprint 1.
+- **Próximo passo:** Apresentar o escopo revisado ao (Consultor/Mentor) para assinatura/aprovação formal da entrega do Sprint 1.
 
 ## 11. Squad
 
