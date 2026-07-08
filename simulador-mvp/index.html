@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear IT - Workspace L1 com Copiloto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-headset"></i> Clear IT
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fa-solid fa-ticket"></i> Chamados</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-users"></i> Clientes</a></li>
+                <li><a href="#"><i class="fa-solid fa-book"></i> Base de Conhecimento</a></li>
+            </ul>
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Analista L1">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">João Silva</span>
+                    <span class="user-role">Analista Nível 1</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Ticket View -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Buscar chamados, artigos ou clientes...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                    <button class="primary-btn"><i class="fa-solid fa-plus"></i> Novo Chamado</button>
+                </div>
+            </header>
+
+            <div class="ticket-view">
+                <div class="ticket-header">
+                    <div class="ticket-title-wrapper">
+                        <span class="status-badge open">Aberto</span>
+                        <h1>INC-4029: Erro ao conectar na VPN Corporativa</h1>
+                    </div>
+                    <div class="ticket-meta">
+                        <span><i class="fa-regular fa-clock"></i> Criado há 15 min</span>
+                        <span><i class="fa-regular fa-user"></i> Cliente: TechCorp Brasil</span>
+                        <span><i class="fa-solid fa-tag"></i> Prioridade: Alta</span>
+                    </div>
+                </div>
+
+                <div class="ticket-body">
+                    <div class="message client-message">
+                        <div class="message-header">
+                            <strong>Carlos Mendes (Cliente)</strong>
+                            <span class="time">10:15 AM</span>
+                        </div>
+                        <div class="message-content">
+                            <p>Olá suporte, não estou conseguindo conectar na VPN corporativa hoje pela manhã. O cliente Cisco AnyConnect fica em "Connecting..." e depois de um tempo apresenta o erro "Connection attempt has failed due to network or PC issue". Minha internet está funcionando normalmente. Podem ajudar urgentemente? Tenho reuniões importantes.</p>
+                            <p>Meu IP local é 192.168.1.15 e meu usuário é cmendes.</p>
+                        </div>
+                    </div>
+
+                    <div id="reply-area" class="reply-box hidden">
+                        <textarea id="reply-input" placeholder="Digite sua resposta ou use o rascunho do copiloto..."></textarea>
+                        <div class="reply-actions">
+                            <button class="secondary-btn" id="cancel-reply">Cancelar</button>
+                            <button class="primary-btn" id="send-reply">Enviar Resposta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Copilot Sidebar -->
+        <aside class="copilot-panel">
+            <div class="copilot-header">
+                <div class="copilot-title">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Copiloto IA
+                </div>
+                <div class="copilot-status">Pronto</div>
+            </div>
+
+            <div class="copilot-content">
+                <div class="empty-state" id="copilot-empty">
+                    <div class="pulse-ring"></div>
+                    <i class="fa-solid fa-robot"></i>
+                    <p>O Copiloto está pronto para analisar este chamado e auxiliar no atendimento.</p>
+                    <button class="action-btn" id="btn-analyze">Analisar Chamado</button>
+                </div>
+
+                <div class="analysis-flow hidden" id="copilot-results">
+                    <!-- Step 1: Anonymization -->
+                    <div class="analysis-step success">
+                        <div class="step-header">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Anonimização (LGPD)</span>
+                        </div>
+                        <div class="step-content">
+                            <p>Dados sensíveis mascarados antes do envio:</p>
+                            <ul class="tag-list">
+                                <li>IP: [IP_ADDRESS]</li>
+                                <li>Usuário: [USERNAME]</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: RAG Retrieval -->
+                    <div class="analysis-step success">
+                        <div class="step-header">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <span>Busca na Base de Conhecimento</span>
+                        </div>
+                        <div class="step-content">
+                            <p>Artigos recuperados (RAG):</p>
+                            <div class="rag-docs">
+                                <a href="#"><i class="fa-solid fa-file-lines"></i> KB-104: Solução de problemas Cisco AnyConnect</a>
+                                <a href="#"><i class="fa-solid fa-file-lines"></i> KB-215: Erro de Timeout VPN</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Diagnosis -->
+                    <div class="analysis-step active">
+                        <div class="step-header">
+                            <i class="fa-solid fa-stethoscope"></i>
+                            <span>Diagnóstico Provável</span>
+                            <span class="confidence high">Confiança: 92%</span>
+                        </div>
+                        <div class="step-content">
+                            <p>Baseado no erro "Connection attempt has failed" relatado, trata-se provavelmente de um bloqueio de rota local, falha de resolução DNS do gateway da VPN, ou o cliente está desatualizado.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Suggested Actions -->
+                    <div class="analysis-step active">
+                        <div class="step-header">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span>Ações Recomendadas</span>
+                        </div>
+                        <div class="step-content">
+                            <ol class="action-list">
+                                <li>Solicitar verificação de antivírus/firewall local.</li>
+                                <li>Limpar cache DNS (<code>ipconfig /flushdns</code>).</li>
+                                <li>Reinstalar o perfil do AnyConnect.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Draft Response -->
+                    <div class="analysis-step active highlight">
+                        <div class="step-header">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <span>Rascunho de Resposta</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="draft-box" id="draft-text">
+Olá Carlos, bom dia. Compreendo a urgência devido às suas reuniões.
+
+Esse erro geralmente está relacionado a um bloqueio de rota local ou cache DNS preso. Vamos realizar dois passos rápidos:
+
+1. Abra o Menu Iniciar, digite "cmd", clique com o botão direito e selecione "Executar como administrador".
+2. Digite o comando: ipconfig /flushdns e aperte Enter.
+3. Tente conectar novamente na VPN.
+
+Caso o problema persista, peço que desative temporariamente seu antivírus local para testarmos se há bloqueio.
+
+Fico no aguardo do seu retorno para continuarmos o suporte.
+                            </div>
+                            <div class="draft-actions">
+                                <button class="btn-outline" id="btn-use-draft"><i class="fa-solid fa-arrow-turn-up"></i> Usar Rascunho</button>
+                                <button class="btn-icon" title="Regerar"><i class="fa-solid fa-rotate-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div class="feedback-section">
+                        <span>A análise foi útil?</span>
+                        <div class="feedback-buttons">
+                            <button class="btn-icon"><i class="fa-regular fa-thumbs-up"></i></button>
+                            <button class="btn-icon"><i class="fa-regular fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
